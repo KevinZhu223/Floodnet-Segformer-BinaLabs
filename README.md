@@ -4,7 +4,7 @@ This repository contains a high-performance **SegFormer-B4** pipeline for semant
 
 By using the same core optimizations—OHEM loss and a 1024x1024 high-resolution cropping strategy—we demonstrate that the model effectively scales across diverse disaster scenarios (Hurricanes vs. Floods) with minimal tuning.
 
-## 📊 Cross-Dataset Generalizability Comparison
+## Cross-Dataset Generalizability Comparison
 
 Our DA-Segformer strategy consistently outperforms standard baselines. Below is a comparison of our best results on the two primary datasets:
 
@@ -17,7 +17,7 @@ Our DA-Segformer strategy consistently outperforms standard baselines. Below is 
 
 ---
 
-## 📈 Detailed Per-Class Performance (FloodNet)
+## Detailed Per-Class Performance (FloodNet)
 
 The following table breaks down the model's performance on the FloodNet validation set. The use of **Class-Aware Cropping** was particularly effective in maintaining high accuracy for rare classes like "Pool" and "Vehicle."
 
@@ -40,7 +40,7 @@ The following table breaks down the model's performance on the FloodNet validati
 
 ---
 
-## 🛠️ The Visualization Challenge & Solution
+## The Visualization Challenge & Solution
 
 A major engineering hurdle was generating artifact-free visualizations for massive 3000x4000px UAV images.
 
@@ -54,7 +54,7 @@ We implemented a custom visualization pipeline (`viz_smooth_stitch_floodnet.py`)
 
 ---
 
-## 🏗️ Methodology
+## Methodology
 
 This implementation utilizes:
 * **Architecture:** `Segformer-B4` (MiT-B4 Encoder).
@@ -66,21 +66,21 @@ This implementation utilizes:
 
 ---
 
-## 💻 Usage
+## Usage
 
-### 🚀 Training
+### Training
 To reproduce the final FloodNet training run:
 ```bash
 ./run_train_floodnet_v2.sh
 ```
 
-### 🔍 Visualization (Smooth Stitching)
+### Visualization (Smooth Stitching)
 To generate the high-quality visualizations:
 ```bash
 ./run_smooth_stitch_floodnet.sh val
 ```
 
-### 📊 Standard Assessment
+### Standard Assessment
 To run the standard evaluation script on the test set:
 ```bash
 ./run_viz_floodnet_segformer.sh
